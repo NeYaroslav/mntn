@@ -8,7 +8,7 @@ const bgClouds = document.querySelector('.bg-clouds')
 const scrollbar = document.querySelector('.page-nav__progress-bar')
 const pageLinks = document.querySelectorAll('.page-link')
 const pageNav = document.querySelector('.page-nav')
-
+const headerLinks = document.querySelectorAll('.header-link')
 const animItems = document.querySelectorAll('.animation')
 
 
@@ -87,3 +87,13 @@ window.addEventListener('resize', ()=> {
     }
 })
 burger.addEventListener('click', openBurgerMenu)
+
+headerLinks.forEach(link => {
+    link.addEventListener('click', ()=> {
+        if(header.classList.contains('active')
+        || menu.classList.contains('active')
+        || burger.classList.contains('active')) {
+            openBurgerMenu()
+        }
+    })
+})
